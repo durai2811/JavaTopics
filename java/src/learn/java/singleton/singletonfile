@@ -1,0 +1,36 @@
+SINGLETON DESIGN PATTERN
+------------------------
+1. A singleton class is a class that have only one object at a time.
+2. Make a constructor private.
+3. Write a static method that has the return type object of this singleton class.
+4. Saves memory because object is not created at each request. Only single instance is reused again and again.
+5. Singleton pattern is mostly used in multi-threaded and database applications.
+we can follow singleton pattern
+->the concept of Lazy initialization : creation of instance when required.
+->the concept of Early Instantiation : creation of instance at load time.
+
+now i use creation of instance when required.
+syntax
+------
+class A{
+  private static A a=null;
+    private A(){
+    // should be private constructor, why because can not create object in other class.
+    }
+
+    public static A getInstance(){ //you can write any method name
+        if(a=null){
+        a= new A();
+        }
+        return a;
+    }
+}
+
+class B{
+    main method(String[] args){
+        A a =new A() // we cannot create object because private constructor
+     A obj =A.getInstance();
+     A obj1 =A.getInstance();
+     sout(obj.hashcode == obj1.hashcode); // true
+    }
+}
