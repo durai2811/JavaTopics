@@ -4,4 +4,7 @@
 *.class
 target/
 *.iml
+*.class
+*.xml
+*.iml
 .idea/
